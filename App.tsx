@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignInScreen from "./Screens/SignInScreen";
-import HomeScreen from "./Screens/HomeScreen";
+import TabNavigator from "./Screens/TabNavigator";
 
 // ✅ Define navigation types
 type RootStackParamList = {
@@ -17,7 +17,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SignIn">
         <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home">
+          {({ route }) => <TabNavigator username={route.params?.username} />}  
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
