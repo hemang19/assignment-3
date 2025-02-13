@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, Alert, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import credentialsData from "../credentials.json"; // Import JSON file
@@ -61,7 +61,7 @@ const SignInScreen = () => {
     }
 
     // Navigate to Tab Navigator, passing username
-    navigation.navigate("Home", { username: trimmedPassword });
+    navigation.navigate("Home", { username: trimmedUsername });
   };
 
   return (

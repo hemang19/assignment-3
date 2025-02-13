@@ -9,10 +9,10 @@ type CityScreenProps = {
 const CityScreen: React.FC<CityScreenProps> = ({ city, link }) => {
   return (
     <View style={styles.container}>
-      {/* ✅ City Title */}
+      {/* City Title */}
       <Text style={styles.title}>{city}</Text>
 
-      {/* ✅ City Image */}
+      {/* City Image */}
       <Image
         source={{
           uri: city === "Calgary"
@@ -22,10 +22,10 @@ const CityScreen: React.FC<CityScreenProps> = ({ city, link }) => {
         style={styles.image}
       />
 
-      {/* ✅ Button to City Page */}
+      {/* Button to City Page */}
       <Button title="Go to city page" onPress={() => Linking.openURL(link)} />
 
-      {/* ✅ City Information */}
+      {/* City Information */}
       <View style={styles.infoContainer}>
         <Text style={styles.info}>
           {city === "Calgary"
@@ -40,9 +40,29 @@ const CityScreen: React.FC<CityScreenProps> = ({ city, link }) => {
 export default CityScreen;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center", padding: 20 },
-  title: { fontSize: 24, fontWeight: "bold", marginBottom: 10 },
-  image: { width: 300, height: 200, marginBottom: 10 },
-  infoContainer: { marginTop: 20, paddingHorizontal: 10 },
-  info: { fontSize: 16, textAlign: "center", color: "gray" },
+  container: { 
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    padding: 20 
+  },
+  title: { 
+    fontSize: 24, 
+    fontWeight: "bold", 
+    marginBottom: 10 
+  },
+  image: {
+    width: 300, 
+    height: 200, 
+    marginBottom: 10 
+  },
+  infoContainer: {
+    marginTop: 20, 
+    paddingHorizontal: 10 
+  },
+  info: {
+    fontSize: 16, 
+    textAlign: "center", 
+    color: "gray" 
+  },
 });
