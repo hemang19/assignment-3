@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import credentialsData from "../credentials.json"; // Import JSON file
@@ -86,7 +86,9 @@ const SignInScreen = () => {
 
       {formError ? <Text style={styles.error}>{formError}</Text> : null}
 
-      <Button title="Sign In" onPress={validateSignIn} />
+      <TouchableOpacity style={styles.button} onPress={validateSignIn}>
+        <Text style={styles.buttonText}>Sign In</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -94,17 +96,51 @@ const SignInScreen = () => {
 export default SignInScreen;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", padding: 20 },
-  title: { fontSize: 24, textAlign: "center", marginBottom: 20 },
+  container: { 
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    backgroundColor: "#FFFFFF",
+    padding: 20,
+  },
+  title: { 
+    fontSize: 30, 
+    fontWeight: "bold", 
+    color: "#87CEFA",
+    textAlign: "center", 
+    marginBottom: 40,
+  },
   input: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 8,
+    width: "100%",
+    borderRadius: 8,
   },
   error: {
     color: "red",
     marginBottom: 10,
-  }
+  },
+  button: { 
+    backgroundColor: "#FFFFFF", 
+    paddingVertical: 12, 
+    paddingHorizontal: 30, 
+    borderRadius: 8, 
+    marginTop: 20, 
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#87CEFA", 
+    elevation: 3, 
+    shadowColor: "#000", 
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+  },
+  buttonText: {
+    color: "#FFA500", 
+    fontSize: 18, 
+    fontWeight: "bold", 
+  },
 });

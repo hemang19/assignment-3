@@ -4,7 +4,7 @@ import HomeScreen from "./HomeScreen";
 import CityScreen from "./CityScreen";
 
 type TabParamList = {
-  Home: { username: string };
+  Home: { username: string }; 
   Calgary: undefined;
   Edmonton: undefined;
 };
@@ -15,11 +15,11 @@ const TabNavigator = ({ username }: { username: string }) => {
   return (
     <Tab.Navigator>
       {/* Home Screen Tab */}
-      <Tab.Screen 
+      <Tab.Screen
         name="Home"
-        component={HomeScreen}
-        initialParams={{ username }}
-        />
+        component={HomeScreen}  
+        initialParams={{ username }}  
+      />
 
       {/* Calgary Screen Tab */}
       <Tab.Screen name="Calgary">
